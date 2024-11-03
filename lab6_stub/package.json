@@ -1,0 +1,19 @@
+{
+  "name": "cs-546-lab-6",
+  "version": "1.0.0",
+  "description": "Lab-6",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Keval Sompura 20033127",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.7",
+    "cs-546-lab-6": "file:",
+    "express": "^4.21.1",
+    "moment": "^2.30.1",
+    "mongodb": "^6.9.0"
+  }
+}

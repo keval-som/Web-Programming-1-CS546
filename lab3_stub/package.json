@@ -1,0 +1,16 @@
+{
+  "name": "cs-546-lab-3",
+  "version": "1.0.0",
+  "description": "Lab-3",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Keval Sompura 20033127",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.7",
+    "cs-546-lab-3": "file:"
+  }
+}

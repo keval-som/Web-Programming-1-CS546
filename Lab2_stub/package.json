@@ -1,0 +1,15 @@
+{
+  "name": "cs-546-lab-2",
+  "version": "1.0.0",
+  "description": "Lab-2 Modules and Applications",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Keval Sompura 20033127",
+  "license": "ISC",
+  "dependencies": {
+    "cs-546-lab-2": "file:"
+  }
+}
