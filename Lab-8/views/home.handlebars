@@ -1,0 +1,29 @@
+<!-- 
+This handlebar file will be rendered when the following route is hit: GET http://localhost:3000/
+ 
+The title of the document should be "Movie Search". You should have the title set as the <title> element of the HTML document and as an h1 in your document.
+
+Your page should reference a CSS file, /public/css/styles.css; this file should have at least 10 rulesets you must use at least 5 of them on this page. 
+
+You should have a main element, and inside of the main element have a p element with a brief (2-3 sentence description) of what your website does.
+
+Also inside the main element, you will have a form; this form will POST to /moviesearch. This form will have an input and a label; You will give the input a name attribute and id attribute of "searchByTitle".  The label should properly reference the same id as the input. You should also have an input with a type of submit that submits the form (do not use a button, use an input with type="submit"). 
+
+
+ -->
+<main>
+    <article id="movieSearch">
+        <h1>Movie Search</h1>
+        <p class="paragraph">
+            This Website lets you search for movies by title. Form below will help you search for movies by title.
+            <br> Just enter the title of the movie you are looking for and hit search.
+        </p>
+        <form action="/moviesearch" method="post" class="search-form">
+            <label for="searchByTitle">Title:
+                <input type="text" name="searchByTitle" id="searchByTitle" placeholder="Movie Title"
+                    value="{{movie.title}}">
+            </label>
+            <input type="submit" value="search">
+        </form>
+    </article>
+</main>

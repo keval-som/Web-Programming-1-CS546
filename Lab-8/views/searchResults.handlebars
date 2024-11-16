@@ -1,0 +1,50 @@
+{{!
+This route will respond with a valid HTML document with the results returned from the API. The title of the document
+should be "Movies Found". You should have the title set as the <title> element of the HTML document and as an h1 in your
+    document. In an h2 element, you will print the supplied searchByTitle.
+
+    Your page should reference a CSS file, /public/css/styles.css; this file should have at least 10 rulesets you must
+    use at least 5 of them on this page.
+
+    You should have a main element, and inside of the main element have a ol tag that has a list of up to 50 movies
+    matching the searchByTitle found in the request body in the following format (after searching Breakfast). DO NOT
+    SHOW MORE THAN 50 Movies. Each list item will show the image of the movie, and the movie title, it should link to
+    your /getmovie/:id route. One of your CSS rules, should scale the image from the data so it is just a thumbnail.
+    Otherwise, the image will be huge! You will lose points if you make it that huge. I found a good width is 75px and a
+    good height is 117px. DO NOT FORGET TO ADD THE ALT ATTRIBUTE TO the Image. Set it to be "[movie name] Poster" as
+    shown below. in the example below, I am just showing 3 of the 50 results, make sure you show up to 50 results!
+
+    <ol>
+        <li> <a href="/getmovie/tt0088847">The Breakfast Club <br> <img class="searchResultImage"
+                    alt="The Breakfast Club Poster"
+                    src="https://m.media-amazon.com/images/M/MV5BOTM5N2ZmZTMtNjlmOS00YzlkLTk3YjEtNTU1ZmQ5OTdhODZhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"></a>
+        <li>
+            <a href="/getmovie/tt0054698">Breakfast at Tiffany's <br> <img class="searchResultImage"
+                    alt="Breakfast at Tiffany's Poster"
+                    src="https://m.media-amazon.com/images/M/MV5BNGEwMTRmZTQtMDY4Ni00MTliLTk5ZmMtOWMxYWMyMTllMDg0L2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNjc1NTYyMjg@._V1_SX300.jpg">
+            </a>
+        </li>
+        <li>
+            <a href="/getmovie/tt0411195">Breakfast on Pluto <br> <img class="searchResultImage"
+                    alt="Breakfast on Pluto Poster"
+                    src="https://m.media-amazon.com/images/M/MV5BYmU5YjJlYjEtNGE5Ni00ODA5LWE4ZTAtNzZlNDhlODIzMzE4XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg">
+            </a>
+        </li>
+    </ol>
+    }}
+
+<main class="searchResults">
+    <h1>Movies Found</h1>
+    <article class="movies">
+        <h2>Search Results for {{searchQuery}}</h2>
+        <ol>
+            {{#each movies}}
+            <li>
+                <a href="/getmovie/{{imdbID}}" >{{Title}} <br> <img class="searchResultImage" alt="{{Title}} Poster"
+                        src="{{Poster}}"></a>
+            </li>
+            {{/each}}
+        </ol>
+    </article>
+    <a href="/" class="back-link">Search for Another Movie</a>
+</main>

@@ -1,0 +1,163 @@
+{{!
+This page will be rendered when the following route is hit: GET http://localhost:3000/getmovie/:id
+The title of the document should be the name of the movie. You should have the title set as the <title> element of the
+    HTML document.
+
+    Your page should reference a CSS file, /public/css/styles.css; his file should have at least 10 rulesets you must
+    use at least 5 of them on this page.
+
+    You should have a main element, and inside of the main element, you will have an article tag that has an h1 with the
+    Movie title, an img which the src is set to the value read from the poster field in the data which is a URL to an
+    image for the movie poster. and will have the movie data. Please see the rendered HTML example below. Not all fields
+    from the data are used, refer to the HTML example below for the fields/elements. you must show on your page.
+
+    Matching Movie Data Returned from API:
+
+    {
+    "Title": "The Breakfast Club",
+    "Year": "1985",
+    "Rated": "R",
+    "Released": "15 Feb 1985",
+    "Runtime": "97 min",
+    "Genre": "Comedy, Drama",
+    "Director": "John Hughes",
+    "Writer": "John Hughes",
+    "Actors": "Emilio Estevez, Judd Nelson, Molly Ringwald",
+    "Plot": "Five high school students meet in Saturday detention and discover how they have a great deal more in common
+    than they thought.",
+    "Language": "English",
+    "Country": "United States",
+    "Awards": "4 wins",
+    "Poster":
+    "https://m.media-amazon.com/images/M/MV5BOTM5N2ZmZTMtNjlmOS00YzlkLTk3YjEtNTU1ZmQ5OTdhODZhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg
+    Links to an external site.",
+    "Ratings": [
+    {
+    "Source": "Internet Movie Database",
+    "Value": "7.8/10"
+    },
+    {
+    "Source": "Rotten Tomatoes",
+    "Value": "89%"
+    },
+    {
+    "Source": "Metacritic",
+    "Value": "66/100"
+    }
+    ],
+    "Metascore": "66",
+    "imdbRating": "7.8",
+    "imdbVotes": "433,376",
+    "imdbID": "tt0088847",
+    "Type": "movie",
+    "DVD": "15 Jun 2012",
+    "BoxOffice": "$45,875,171",
+    "Production": "N/A",
+    "Website": "N/A",
+    "Response": "True"
+    }
+    HTML Format with the rendered data for the Movie. This will go into your main element:
+
+    <article>
+        <h1>The Breakfast Club</h1>
+        <img alt="The Breakfast Club Poster"
+            src="https://m.media-amazon.com/images/M/MV5BOTM5N2ZmZTMtNjlmOS00YzlkLTk3YjEtNTU1ZmQ5OTdhODZhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg">
+        <h2>Plot</h2>
+        <p>Five high school students meet in Saturday detention and discover how they have a great deal more in common
+            than they thought.</p>
+        <section>
+            <h3>Info</h3>
+            <dl>
+                <dt>Year Released:</dt>
+                <dd>1985</dd>
+                <dt>Rated:</dt>
+                <dd>R</dd>
+                <dt>Runtime:</dt>
+                <dd>97 min</dd>
+                <dt>Genre(s):</dt>
+                <dd>Comedy, Drama</dd>
+                <dt>Box Office Earnings:</dt>
+                <dd>$45,875,171</dd>
+                <dt>DVD Release Date:</dt>
+                <dd>15 Jun 2012</dd>
+            </dl>
+        </section>
+
+        <section>
+            <h4>Cast and Crew</h4>
+            <p><strong>Director:</strong> John Hughes</p>
+            <p><strong>Writer:</strong> John Hughes</p>
+            <p><strong>Cast:</strong> Emilio Estevez, Judd Nelson, Molly Ringwald</p>
+        </section>
+
+        <section>
+            <h4>Ratings</h4>
+            <table class="my_coolratings_table">
+                <tr>
+                    <th>Source</th>
+                    <th>Rating</th>
+                </tr>
+                <tr>
+                    <td>Internet Movie Database</td>
+                    <td>7.8/10</td>
+                </tr>
+                <tr>
+                    <td>Rotten Tomatoes</td>
+                    <td>89%</td>
+                </tr>
+                <tr>
+                    <td>Metacritic</td>
+                    <td>66/100</td>
+                </tr>
+            </table>
+        </section>
+
+    </article>
+
+    }}
+
+    <article class="moviePage">
+        <h1>{{{movie.Title}}}</h1>
+        <img class="getMovieImage" alt="{{movie.Title}} Poster" src="{{movie.Poster}}">
+        <h2>Plot</h2>
+        <p>{{{movie.Plot}}}</p>
+        <section>
+            <h3>Info</h3>
+            <dl>
+                <dt>Year Released:</dt>
+                <dd>{{{movie.Year}}}</dd>
+                <dt>Rated:</dt>
+                <dd>{{{movie.Rated}}}</dd>
+                <dt>Runtime:</dt>
+                <dd>{{{movie.Runtime}}}</dd>
+                <dt>Genre(s):</dt>
+                <dd>{{{movie.Genre}}}</dd>
+                <dt>Box Office Earnings:</dt>
+                <dd>{{{movie.BoxOffice}}}</dd>
+                <dt>DVD Release Date:</dt>
+                <dd>{{{movie.DVD}}}</dd>
+            </dl>
+        </section>
+        <section>
+            <h4>Cast and Crew</h4>
+            <p><strong>Director:</strong> {{{movie.Director}}}</p>
+            <p><strong>Writer:</strong> {{{movie.Writer}}}</p>
+            <p><strong>Cast:</strong> {{{movie.Actors}}}</p>
+        </section>
+        <section>
+            <h4>Ratings</h4>
+            <table class="my_coolratings_table">
+                <tr>
+                    <th>Source</th>
+                    <th>Rating</th>
+                </tr>
+                {{#each movie.Ratings}}
+                <tr>
+                    <td>{{Source}}</td>
+                    <td>{{Value}}</td>
+                </tr>
+                {{/each}}
+            </table>
+        </section>
+    </article>
+    <a href="/" class="back-link">Search for Another Movie</a>

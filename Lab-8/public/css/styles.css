@@ -1,0 +1,100 @@
+/*This file should have 10 CSS rulesets */
+h1 {
+    font-size: 54px;
+    color: #333;
+}
+
+#movieSearch {
+    text-align: center;
+    width: 100%;
+}
+
+.paragraph {
+    font-size: 24px;
+    color: #333;
+    font-family: Arial, sans-serif;
+}
+
+.search-form {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.search-form label {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.centered-article {
+    display: flex;
+    justify-content: center;
+}
+
+.searchResultImage {
+    width: 75px;
+    height: 117px;
+}
+
+.searchResults {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.searchResults li {
+    text-align: left;
+    font-size: 24px;
+}
+
+.movie h2 {
+    font-size: 36px;
+    color: #333;
+}
+.error {
+    color: red;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.movie-not-found {
+    color: rgb(0, 51, 255);
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.back-link {
+    font-size: 24px;
+    color: #2e0bde;
+    text-decoration: underline;
+}
+
+.getMovieImage {
+    width: 200px;
+    height: 250px;
+}
+
+.moviePage {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.moviePage h2 {
+    font-size: 36px;
+    color: #333;
+}
+
+.moviePage p {
+    font-size: 24px;
+    color: #333;
+}
+
+.my_coolratings_table {
+    width: auto;
+    margin: 0 auto;
+    text-align: center;
+}
