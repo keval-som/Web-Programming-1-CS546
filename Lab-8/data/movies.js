@@ -3,11 +3,11 @@ import { callApi, strCheck } from "../helpers.js";
 
 export const searchMoviesByTitle = async (title) => {
   /*Function to make an axios call to search the api and return up to 50 movies matching the title param
-  API endpoint: http://www.omdbapi.com/?apikey=CS546&s={title}
+  API endpoint: http://www.omdbapi.com/?apikey={YourApiKey}&s={title}
   */
   strCheck(title, "title");
   title = title.trim();
-  const url = `http://www.omdbapi.com/?apikey=CS546&s=${title}`;
+  const url = `http://www.omdbapi.com/?apikey={YourApiKey}&s=${title}`;
   const method = "GET";
   const data = {};
   let response = await callApi(url, method, data);
@@ -18,7 +18,7 @@ export const searchMoviesByTitle = async (title) => {
     let page = 2;
     let movieCount = 10;
     while (movieCount < 50 && movieCount < response.totalResults) {
-      const url = `http://www.omdbapi.com/?apikey=CS546&s=${title}&page=${page}`;
+      const url = `http://www.omdbapi.com/?apikey={YourApiKey}&s=${title}&page=${page}`;
       const response2 = await callApi(url, method, data);
       if (response2.Response) {
         response.Search.push(...response2.Search);
@@ -41,11 +41,11 @@ export const searchMoviesByTitle = async (title) => {
 
 export const getMovieById = async (id) => {
   /*Function to make an axios call to the the api matching the id
- API endpoint: http://www.omdbapi.com/?apikey=CS546&i={id}
+ API endpoint: http://www.omdbapi.com/?apikey={YourApiKey}&i={id}
   */
   strCheck(id, "id");
   id = id.trim();
-  const url = `http://www.omdbapi.com/?apikey=CS546&i=${id}`;
+  const url = `http://www.omdbapi.com/?apikey={YourApiKey}&i=${id}`;
   const method = "GET";
   const data = {};
   let response = await callApi(url, method, data);
