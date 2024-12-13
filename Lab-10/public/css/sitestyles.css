@@ -1,0 +1,144 @@
+/* You will create a CSS stylesheet in /public/css/styles.css; this file should have at least 5 rulesets.  You will need to utilize all 5 rulesets on each of the pages (not every page has to use all 5 rulesets each but all 5 rulesets must be utilized by the various pages in your application).  So you can have some rulesets for one page, some for another page but there needs to be at least 5 total rulesets that are used between all the pages. There are two specific rulesets you need to create in addition to the 5 other rulesets:  .light and .dark.  Depending of the user's theme preferences stored in the session, your pages will be displayed using the user's theme preferences. If their theme preference is "light" then the background color of the page should be white and the text color of the page should be black.  If their theme preference is "dark" then the background color of the page should be black and the text color should be white.  HINT: You can just set the body element's class to either dark or light depending on their themePreference stored in the session. obviously, the theme preference only is active after a user is logged in.  */
+
+/* two rulesets you MUST implement in addition to the other 5:
+
+.light{
+    
+}
+
+.dark{
+
+}
+
+*/
+
+/* Center the form and manage spacing */
+main {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  #signup-form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+  }
+  
+  #signup-form label {
+    margin-top: 10px;
+  }
+  
+  #signup-form input {
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  #signup-form input[type="submit"] {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  #signin-form {
+    display: flex;
+    flex-direction: column;
+    width: 320px; 
+    padding: 25px; 
+    border: 1px solid #bbb; 
+    border-radius: 8px; 
+    background-color: #f0f0f0;
+  }
+
+  #signin-form label {
+    margin-top: 12px;
+  }
+
+  #error-message {
+    color: red;
+    font-size: 1.2em;
+    margin-top: 10px;
+  }
+
+  #error-messages {
+    color: red;
+    font-size: 1.2em;
+    margin-top: 10px;
+  }
+
+  #signin-form input {
+    margin-top: 6px;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+  }
+
+  #signin-form input[type="submit"] {
+    margin-top: 22px;
+    padding: 12px; 
+    background-color: #0056b3; 
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  main {
+    padding: 20px;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  .signout-container {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .signout-message {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
+  
+  .signout-link {
+    font-size: 1.2em;
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .adminView {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .welcome {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
+  
+  .quote {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    font-style: italic;
+  }
+  
+  .link {
+    display: block;
+    margin: 10px 0;
+    font-size: 1.2em;
+    color: #007bff;
+    text-decoration: none;
+  }
+  

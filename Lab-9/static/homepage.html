@@ -12,3 +12,44 @@ A label with a for attribute referencing your input
 A input with and type of number and a name and id attribute of fibonacci_index_input (both the name and the id attribute of this element should be this value)
 A button to submit the form
  -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/public/css/main.css">
+        <title>Fibonacci Prime Checker</title>
+    </head>
+
+    <body>
+        <h1 class="heading">Fibonacci Prime Checker</h1>
+
+        <main>
+            <div class="fiboForm">
+                <form method="post" id="fibonacciForm" class="fibonacciForm">
+                    <label for="fibonacci_index_input">Input index: </label>
+                    <input type="number" name="fibonacci_index_input" id="fibonacci_index_input" required>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+            <div class="error" id="error" hidden></div>
+            <div>
+                <ol id="fibonacciResults">
+                </ol>
+            </div>
+        </main>
+
+        <footer class="footerStyle">
+            <p>Name: Keval Sompura</p>
+            <p>Student ID: 20033127</p>
+            <p>Course: Web Development</p>
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.5.1.js"
+            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+        <script src="../public/js/main.js"></script>
+    </body>
+
+</html>

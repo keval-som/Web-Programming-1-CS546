@@ -1,3 +1,64 @@
 /*
 You will style your page using at least 10 CSS selectors for general CSS styling. You will place the CSS in its own file. 
 */
+
+.heading {
+    font-size: 35px;
+    color: #333;
+    text-align: center;
+    padding: 10px;
+}
+
+.footerStyle {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 5px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.not-prime {
+    color: #ff0000;
+}
+
+.is-prime {
+    color: #00ff00;
+}
+
+.error {
+    color: #ff5f00;
+    font-size: medium;
+}
+
+.fiboForm {
+    text-align: center;
+    padding: 10px;
+}
+
+.fibonacciForm {
+    width: 100%;
+    background-color: lightgrey;
+    height: 50px;
+    align-content: center;
+}
+
+.fibonacciForm input {
+    width: 15%;
+    height: 25px;
+    margin: 10px;
+}
+
+.fibonacciForm button {
+    width: 5%;
+    height: 25px;
+    margin: 10px;
+}
+
+.fibonacciForm label {
+    margin: 10px;
+    font-size: 20px;
+}
+

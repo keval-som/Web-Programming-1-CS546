@@ -9,3 +9,86 @@ If the user does not have a value for the input when they submit, you should not
 
 
 */
+
+let myForm = document.getElementById("fibonacciForm");
+let myInput = document.getElementById("fibonacci_index_input");
+let myUl = document.getElementById("fibonacciResults");
+let error = document.getElementById("error");
+
+if (myForm) {
+  myForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    error.hidden = true;
+    if (!strCheck(myInput.value) || !numCheck(myInput.value)) {
+      error.innerHTML = "Please enter a valid number";
+      error.hidden = false;
+      console.error("Please enter a valid number");
+      myForm.reset();
+      return;
+    }
+    let input = myInput.value;
+    let inputNumber = parseInt(input, 10);
+    let fibo = fibonacci(inputNumber);
+    let prime = isPrime(fibo);
+    let li = document.createElement("li");
+    li.className = prime ? "is-prime" : "not-prime";
+    li.innerHTML = "The Fibonacci of " + input + " is " + fibo + ".";
+    myUl.appendChild(li);
+    myForm.reset();
+  });
+}
+
+const fibonacci = (num) => {
+  let a = 0,
+    b = 1,
+    temp;
+  while (num >= 0) {
+    temp = a;
+    a = a + b;
+    b = temp;
+    num--;
+  }
+  if (num < 0) {
+    return a;
+  }
+  return b;
+};
+
+const isPrime = (num) => {
+  if (num <= 1) {
+    return false;
+  }
+  if (num == 2) {
+    return true;
+  }
+  for (let i = 2; i < num / 2 + 1; i++) {
+    if (num % i == 0) {
+      return false;
+    }
+  }
+  return true;
+};
+
+const strCheck = (str) => {
+  if (!str) {
+    return false;
+  }
+  if (typeof str != "string") {
+    return false;
+  }
+  if (str.length == 0) {
+    return false;
+  }
+  if (str.trim().length == 0) {
+    return false;
+  }
+  return true;
+};
+
+const numCheck = (num) => {
+  let number = Number(num, 10);
+  if (isNaN(number) || !Number.isInteger(number)) {
+    return false;
+  }
+  return true;
+};

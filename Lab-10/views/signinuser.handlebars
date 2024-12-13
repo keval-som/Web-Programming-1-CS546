@@ -1,0 +1,28 @@
+{{!
+
+login form handlebar template
+
+}}
+
+<main>
+  <form action="/signinuser" method="post" id="signin-form" class="signin-form">
+    <label for="userId">userId </label>
+    <input type="text" name="userId" id="userId" required>
+    <label for="password">Password </label>
+    <input type="password" name="password" id="password" required>
+    <button
+      type="submit"
+      name="submit_button"
+      id="submit_button"
+    >Submit</button>
+    {{#if error}}
+      <div id="error-messages" class="error-messages">
+        <p>{{error}}</p>
+      </div>
+    {{/if}}
+
+    <div class="error-message" id="error-message" hidden></div>
+
+  </form>
+  <a class="link" href="/signupuser">Click here to signup!</a>
+</main>

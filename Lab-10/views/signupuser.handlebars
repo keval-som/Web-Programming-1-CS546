@@ -1,0 +1,53 @@
+{{!
+
+registration handelbars
+
+}}
+
+<main>
+  <form action="/signupuser" method="post" id="signup-form" class="signup-form">
+    <label for="firstName">First Name </label>
+    <input type="text" id="firstName" name="firstName" required >
+    <label for="lastName"> Last Name </label>
+    <input type="text" name="lastName" id="lastName" required >
+    <label for="userId">userId </label>
+    <input type="text" name="userId" id="userId" required >
+    <label for="password">Password </label>
+    <input type="password" name="password" id="password" required >
+    <label for="confirmPassword">Confirm Password </label>
+    <input type="password" name="confirmPassword" id="confirmPassword" >
+    <label for="favoriteQuote">Favorite Quote </label>
+    <input type="text" name="favoriteQuote" id="favoriteQuote" required >
+    <label for="backgroundColor">Background Color </label>
+    <input type="color" id="backgroundColor" >
+    <input
+      type="hidden"
+      name="themePreference[backgroundColor]"
+      id="hiddenBackgroundColor"
+    >
+
+    <label for="fontColor">Font Color </label>
+    <input type="color" id="fontColor" >
+    <input
+      type="hidden"
+      name="themePreference[fontColor]"
+      id="hiddenFontColor"
+    >
+    <label for="role">Role </label>
+    <select name="role" id="role">
+      <option value="user">User</option>
+      <option value="admin">Admin</option>
+    </select>
+    <button type="submit" name="submitButton" id="submitButton">Submit</button>
+    {{#if error}}
+      <div id="error-messages" class="error-messages">
+        <p>{{error}}</p>
+      </div>
+    {{/if}}
+
+    <div class="error-message" id="error-message" hidden></div>
+
+  </form>
+  <a class="link" href="/signinuser">Already have an account? Click here to
+    sign-in</a>
+</main>
