@@ -42,16 +42,13 @@ const fibonacci = (num) => {
   let a = 0,
     b = 1,
     temp;
-  while (num >= 0) {
+  while (num > 0) {
     temp = a;
     a = a + b;
     b = temp;
     num--;
   }
-  if (num < 0) {
-    return a;
-  }
-  return b;
+  return a;
 };
 
 const isPrime = (num) => {
